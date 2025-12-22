@@ -1,12 +1,68 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import { Tabs } from "expo-router";
+import { Ionicons } from "@expo/vector-icons";
+import { useTheme } from "@/hooks/theme/Themes";
 
-const _layout = () => {
+export default function TabsLayout() {
+    const { colors } = useTheme();
+
     return (
-        <View>
-            <Text>_layout</Text>
-        </View>
-    )
-}
+        <Tabs
+            screenOptions={({ route }) => ({
+                headerShown: false,
 
-export default _layout
+                tabBarStyle: {
+                    height: 70,
+                    backgroundColor: "#ffffff",
+                    borderTopWidth: 0,
+                    elevation: 10,
+                    paddingBottom: 8,
+                    paddingTop: 8,
+                },
+
+                tabBarActiveTintColor: colors.primary,
+                tabBarInactiveTintColor: colors.textMuted,
+
+                tabBarIcon: ({ focused, color, size }) => {
+                    let iconName: any;
+
+                    switch (route.name) {
+                        case "home":
+                            iconName = focused ? "home" : "home-outline";
+                            break;
+                        case "category":
+                            iconName = focused ? "grid" : "grid-outline";
+                            break;
+                        case "bookings":
+                            iconName = focused ? "calendar" : "calendar-outline";
+                            break;
+                        case "message":
+                            iconName = focused ? "chatbubble-ellipses" : "chatbubble-ellipses-outline";
+                            break;
+                        case "profile":
+                            iconName = focused ? "person" : "person-outline";
+                            break;
+                    }
+
+                    return (
+                        <Ionicons
+                            name={iconName}
+                            size={22}
+                            color={color}
+                        />
+                    );
+                },
+
+                tabBarLabelStyle: {
+                    fontSize: 12,
+                    fontWeight: "600",
+                },
+            })}
+        >
+            <Tabs.Screen name="home" options={{ title: "Home" }} />
+            <Tabs.Screen name="category" options={{ title: "Category" }} />
+            <Tabs.Screen name="bookings" options={{ title: "Bookings" }} />
+            <Tabs.Screen name="messages" options={{ title: "Message" }} />
+            <Tabs.Screen name="profile" options={{ title: "Profile" }} />
+        </Tabs>
+    );
+}
