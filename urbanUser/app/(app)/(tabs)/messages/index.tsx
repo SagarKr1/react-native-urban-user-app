@@ -1,12 +1,12 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 
-const messages = () => {
+const index = () => {
     return (
         <View>
-            <Text>messages</Text>
+            <Text>index</Text>
         </View>
     )
 }
 
-export default messages
+export default index
