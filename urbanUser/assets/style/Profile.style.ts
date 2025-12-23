@@ -148,7 +148,7 @@ export const createProfileStyle = (colors: ColorScheme) => {
             gap:10
         },
         bodyText: {
-
+            color:colors.text
         }
     });
     return styles;
