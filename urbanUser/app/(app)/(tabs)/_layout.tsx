@@ -12,7 +12,7 @@ export default function TabsLayout() {
 
                 tabBarStyle: {
                     height: 70,
-                    backgroundColor: "#ffffff",
+                    backgroundColor: colors.bg,
                     borderTopWidth: 0,
                     elevation: 10,
                     paddingBottom: 8,
@@ -32,11 +32,11 @@ export default function TabsLayout() {
                         case "category":
                             iconName = focused ? "grid" : "grid-outline";
                             break;
-                        case "bookings":
+                        case "booking":
                             iconName = focused ? "calendar" : "calendar-outline";
                             break;
-                        case "message":
-                            iconName = focused ? "chatbubble-ellipses" : "chatbubble-ellipses-outline";
+                        case "messages":
+                            iconName = focused ? "chatbox-ellipses" : "chatbox-ellipses-outline";
                             break;
                         case "profile":
                             iconName = focused ? "person" : "person-outline";
