@@ -10,7 +10,7 @@ const PendingBooking = () => {
         <View style={styles.container}>
             <View style={styles.card}>
                 <Image
-                    source={{ uri: "https://via.placeholder.com/70" }}
+                    source={require("@/assets/images/e1.jpg")}
                     style={styles.image}
                 />
 

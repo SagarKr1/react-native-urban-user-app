@@ -110,15 +110,15 @@ export const createBookingStyle = (colors: ColorScheme) => {
         },
 
         statusPendingText: {
-            color: colors.warning,
+            color: colors.text,
         },
 
         statusCompletedText: {
-            color: colors.success,
+            color: colors.text,
         },
 
         statusCanceledText: {
-            color: colors.danger,
+            color: colors.bg,
         },
 
         btnRow: {
@@ -154,7 +154,7 @@ export const createBookingStyle = (colors: ColorScheme) => {
         },
 
         btnOutlineText: {
-            color: colors.border,
+            color: colors.text,
         },
     });
     return styles;
